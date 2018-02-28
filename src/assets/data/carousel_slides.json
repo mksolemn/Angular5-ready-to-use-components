@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 1 Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra interdum molestie. Fusce posuere lectus velit, eu luctus neque ullamcorper a. Vestibulum non elementum erat, sit amet sollicitudin sapien. Curabitur consequat fringilla quam, sit amet tempus turpis lobortis at."
+  },
+  {
+    "id": 2,
+    "image": "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 2 super wickedly annoying uselessly over-exaggerated title to make a point about awesome capabilities of slider dynamicness",
+    "description": "In ac massa hendrerit, semper arcu vel, sagittis urna. Etiam tincidunt tristique orci, vitae mollis nisl pellentesque sed. Aenean et aliquam lacus. Vivamus non egestas magna, et convallis mi. Praesent sed elit efficitur, euismod odio id, vestibulum neque. Quisque enim nisl, cursus at mauris in, commodo fringilla leo. Suspendisse potenti. Aenean hendrerit vel justo vitae commodo. Aliquam sed diam dignissim, porttitor est in, posuere neque. Proin rutrum vestibulum urna. In leo quam, ultrices sed posuere maximus, eleifend in metus. Donec sapien magna, mollis ac odio vel, tincidunt laoreet nisi."
+  },
+  {
+    "id": 3,
+    "image": "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?h=350&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?h=350&auto=compress&cs=tinysrgb",
+    "title": "Slider 3",
+    "description": "Short text"
+  },
+  {
+    "id": 4,
+    "image": "https://images.pexels.com/photos/301643/pexels-photo-301643.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/301643/pexels-photo-301643.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 4",
+    "description": "Short text 4"
+  },
+  {
+    "id": 5,
+    "image": "https://images.pexels.com/photos/271713/pexels-photo-271713.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/271713/pexels-photo-271713.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 5",
+    "description": "Short text 5"
+  },
+  {
+    "id": 6,
+    "image": "https://images.pexels.com/photos/280232/pexels-photo-280232.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/280232/pexels-photo-280232.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 6",
+    "description": "Short text 6"
+  },
+  {
+    "id": 7,
+    "image": "https://images.pexels.com/photos/271654/pexels-photo-271654.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/271654/pexels-photo-271654.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 7",
+    "description": "Short text 7"
+  },
+  {
+    "id": 8,
+    "image": "https://i.imgur.com/ggB7xT8.jpg",
+    "thumbnail": "https://i.imgur.com/ggB7xT8.jpg",
+    "title": "Slider 8",
+    "description": "Short text 8"
+  },
+  {
+    "id": 9,
+    "image": "https://images1.sw-cdn.net/product/picture/710x528_7123792_1252375_1459321632.jpg",
+    "thumbnail": "https://images1.sw-cdn.net/product/picture/710x528_7123792_1252375_1459321632.jpg",
+    "title": "Slider 9",
+    "description": "Short text 9"
+  }
+]

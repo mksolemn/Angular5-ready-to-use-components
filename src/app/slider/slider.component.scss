@@ -1,0 +1,78 @@
+$control-icon-size: 60px;
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+
+.main-slider-item {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &.hidden {
+    display: none;
+  }
+  &.visible {
+    display: flex;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.main-slide {
+  height: 460px;
+  display: flex;
+  flex-direction: row;
+  > * {
+    flex: 1;
+    min-width: 100%;
+  }
+}
+
+.main-slider-controls {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .back, .forward {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -$control-icon-size / 2;
+    display: inline-block;
+    height: $control-icon-size;
+    cursor: pointer;
+    opacity: .45;
+    &:hover {
+      opacity: .9;
+    }
+  }
+  .back {
+    left: 0;
+  }
+  .forward {
+    right: 0;
+    transform: rotate(180deg);
+    .icon {
+
+    }
+  }
+}

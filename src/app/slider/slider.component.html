@@ -1,0 +1,24 @@
+<div class="slider-wrapper">
+  <div class="slider"
+       *ngIf="renderedSlides"
+       (swipeleft)="swipe($event.type)"
+       (swiperight)="swipe($event.type)">
+    <div class="main-slide">
+      <div *ngFor="let slide of renderedSlides"
+           class="main-slider-item"
+           [@slideState]="slideState"
+           [class.visible]="slide.id === currentSlide"
+           [class.hidden]="slide.id !== currentSlide">
+        <img [src]="slide.image" alt="slide.title" ><!-- slide.id === nextSlide-->
+      </div>
+      <div class="main-slider-controls">
+        <div class="back" (mouseover)="onMainHover($event,'back')" (mouseout)="onMainHover($event,'back')">
+          <img class="icon" [src]="config.arrowSingle" (click)="onControlClick('back')">
+        </div>
+        <div class="forward" (mouseover)="onMainHover($event,'forward')" (mouseout)="onMainHover($event,'forward')">
+          <img class="icon flipped" [src]="config.arrowSingle" (click)="onControlClick('forward')">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
