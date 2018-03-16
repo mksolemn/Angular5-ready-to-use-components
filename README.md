@@ -17,7 +17,7 @@ DON'T forget to import to angular-cli:
       "../node_modules/hammerjs/hammer.min.js"
     ]
 ```
-2. Copy slider component to your 
+2. Copy slider component to your project
 
 3. Import slider to app module
 ```javascript
