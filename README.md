@@ -11,7 +11,7 @@ npm install hammerjs --save
 
 DON'T forget to import to angular-cli:
 ```javascript
-.angular-cli.json
+//.angular-cli.json
 
     "scripts": [
       "../node_modules/hammerjs/hammer.min.js"
@@ -21,28 +21,28 @@ DON'T forget to import to angular-cli:
 
 3. Import slider to app module
 ```javascript
-app.module.ts
+//app.module.ts
 
 import { SliderComponent } from './slider/slider.component';
 ```
 
 4. Import Hammer.js for touch actions
 ```javascript
-app.module.ts
+//app.module.ts
 
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 ```
 
 5. Import Angular animations
 ```javascript
-app.module.ts
+//app.module.ts
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 ```
 
 6. Add declaration to handle HammerJs scroll event
 ```javascript
-app.module.ts
+//app.module.ts
 
 declare var Hammer: any;
 
@@ -58,7 +58,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
 
 7. Add HammerJS to providers
 ```javascript
-app.module.ts
+//app.module.ts
 
   {
     provide: HAMMER_GESTURE_CONFIG,
@@ -68,7 +68,7 @@ app.module.ts
 
 ## In the end your app.module file should look something like this
 ```javascript
-app.module.ts
+//app.module.ts
 
 // slider - BEGIN
 import { SliderComponent } from './slider/slider.component';
