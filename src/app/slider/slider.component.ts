@@ -16,9 +16,30 @@ import {animate, keyframes, state, style, transition, trigger} from '@angular/an
         opacity: 1,
         transform: 'translate(0%)'
       })),
+      state('slideRight', style({
+        opacity: 1,
+        transform: 'translate(0%)'
+      })),
+      // continous sliding in same direction
       transition('initial <=> slideLeft', animate('500ms ease-in-out', keyframes([
         style({opacity: 0.2, transform: 'translateX(75%)', offset: 0}),
         style({opacity: 1, transform: 'translateX(-35px)',  offset: 0.5}),
+        style({opacity: 1, transform: 'translateX(0)',     offset: 1})
+      ]))),
+      transition('initial <=> slideRight', animate('500ms ease-in-out', keyframes([
+        style({opacity: 0.2, transform: 'translateX(-75%)', offset: 0}),
+        style({opacity: 1, transform: 'translateX(35px)',  offset: 0.5}),
+        style({opacity: 1, transform: 'translateX(0)',     offset: 1})
+      ]))),
+      // switching between directions
+      transition('slideRight => slideLeft', animate('500ms ease-in-out', keyframes([
+        style({opacity: 0.2, transform: 'translateX(75%)', offset: 0}),
+        style({opacity: 1, transform: 'translateX(-35px)',  offset: 0.5}),
+        style({opacity: 1, transform: 'translateX(0)',     offset: 1})
+      ]))),
+      transition('slideLeft => slideRight', animate('500ms ease-in-out', keyframes([
+        style({opacity: 0.2, transform: 'translateX(-75%)', offset: 0}),
+        style({opacity: 1, transform: 'translateX(35px)',  offset: 0.5}),
         style({opacity: 1, transform: 'translateX(0)',     offset: 1})
       ])))
     ])
@@ -61,7 +82,6 @@ export class SliderComponent implements OnInit, OnChanges {
 
   autoSlide() {
     this.slideTimer = setTimeout(() => {
-      console.log('auto slide interval');
       if (this.currentSlide < this.renderedSlides.length) {
         this.currentSlide += 1;
         this.nextSlide = this.currentSlide + 1;
@@ -70,7 +90,7 @@ export class SliderComponent implements OnInit, OnChanges {
         this.nextSlide = this.currentSlide + 1;
       }
       this.autoSlide();
-      this.animateTransition();
+      this.animateTransition('slideLeft');
     }, this.config.autoSlide);
 
   }
@@ -87,16 +107,17 @@ export class SliderComponent implements OnInit, OnChanges {
   onControlClick(direction) {
     clearTimeout(this.slideTimer);
     if (direction === 'forward') {
+      this.animateTransition('slideLeft');
       if (this.currentSlide < this.renderedSlides.length) {
         this.currentSlide += 1;
         this.nextSlide = this.currentSlide + 1;
-        this.slideState = 'slideInLeft';
       } else {
         this.currentSlide = 1;
         this.nextSlide = this.currentSlide + 1;
       }
 
     } else if (direction === 'back') {
+      this.animateTransition('slideRight');
       if (this.currentSlide === 1) {
         this.currentSlide = this.renderedSlides.length;
         this.nextSlide = this.currentSlide - 1;
@@ -108,16 +129,24 @@ export class SliderComponent implements OnInit, OnChanges {
   }
 
   swipe(action) {
-    if (action === this.SWIPE_ACTION.RIGHT) {
+    if (action === this.SWIPE_ACTION.LEFT) {
       this.onControlClick('forward');
     }
-    if (action === this.SWIPE_ACTION.LEFT) {
+    if (action === this.SWIPE_ACTION.RIGHT) {
       this.onControlClick('back');
     }
   }
 
-  animateTransition() {
-    this.slideState === 'initial' ? this.slideState = 'slideLeft' : this.slideState = 'initial';
+  animateTransition(anim) {
+    if (anim === 'slideRight' && this.slideState === 'slideLeft') {
+      this.slideState = 'slideRight';
+    } else if (anim === 'slideLeft' && this.slideState === 'slideRight') {
+      this.slideState = 'slideLeft';
+    } else if (anim === 'slideLeft') {
+      this.slideState === 'initial' ? this.slideState = 'slideLeft' : this.slideState = 'initial';
+    } else if (anim === 'slideRight') {
+      this.slideState === 'initial' ? this.slideState = 'slideRight' : this.slideState = 'initial';
+    }
   }
 
 }

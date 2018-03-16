@@ -9,8 +9,8 @@ import {LocalDataService} from './services/local-data.service';
 export class AppComponent implements OnInit{
   public slides;
   public slideConfig = {
-    contentCountPerSlide: 2,
-    startingSlide: 2,
+    contentCountPerSlide: 1,
+    startingSlide: 1,
     autoSlide: 4000,
     arrowSingle: 'assets/icons/control.svg'
   }
