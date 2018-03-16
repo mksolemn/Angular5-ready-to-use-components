@@ -1,4 +1,139 @@
-# MkComponents
+# Component list
+1. Slider
+
+
+## How to use - Slider:
+
+1. Install dependencies
+```
+npm install hammerjs --save
+```
+
+DON'T forget to import to angular-cli:
+```
+.angular-cli.json
+
+    "scripts": [
+      "../node_modules/hammerjs/hammer.min.js"
+    ]
+```
+2. Copy slider component to your 
+
+3. Import slider to app module
+```
+app.module.ts
+
+import { SliderComponent } from './slider/slider.component';
+```
+
+4. Import Hammer.js for touch actions
+```
+app.module.ts
+
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+```
+
+5. Import Angular animations
+```
+app.module.ts
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+```
+
+6. Add declaration to handle HammerJs scroll event
+```
+app.module.ts
+
+declare var Hammer: any;
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  buildHammer(element: HTMLElement) {
+    const mc = new Hammer(element, {
+      touchAction: 'pan-y'
+    });
+    return mc;
+  }
+}
+```
+
+7. Add HammerJS to providers
+```
+app.module.ts
+
+  {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: MyHammerConfig
+  }
+```
+
+## In the end your app.module file should look something like this
+```
+app.module.ts
+
+// slider - BEGIN
+import { SliderComponent } from './slider/slider.component';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// slider - END
+
+declare var Hammer: any;
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  buildHammer(element: HTMLElement) {
+    const mc = new Hammer(element, {
+      touchAction: 'pan-y'
+    });
+    return mc;
+  }
+}
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SliderComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule
+  ],
+  providers: [
+    LocalDataService,
+    {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: MyHammerConfig
+  }],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+8. Add slider component
+```
+<mk-slider [config]="slideConfig" [slides]="slides"></mk-slider>
+```
+
+9. Format data before passing to slider component. Example of expected data format:
+```
+...
+  {
+    "id": 1,
+    "image": "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?h=350&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?h=350&auto=compress&cs=tinysrgb",
+    "title": "Slider 3",
+    "description": "Short text"
+  },
+  {
+    "id": 2,
+    "image": "https://images.pexels.com/photos/301643/pexels-photo-301643.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "thumbnail": "https://images.pexels.com/photos/301643/pexels-photo-301643.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+    "title": "Slider 4",
+    "description": "Short text 4"
+  }
+...
+```
+
+# MkComponents - standard angular CLI setup below
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
 
