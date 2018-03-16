@@ -26,7 +26,7 @@ DON'T forget to import to angular-cli:
 import { SliderComponent } from './slider/slider.component';
 ```
 
-4. Import Hammer.js for touch actions
+4. Import HammerJs for touch actions
 ```javascript
 //app.module.ts
 
