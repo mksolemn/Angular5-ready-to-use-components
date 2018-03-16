@@ -5,12 +5,12 @@
 ## How to use - Slider:
 
 1. Install dependencies
-```
+```javascript
 npm install hammerjs --save
 ```
 
 DON'T forget to import to angular-cli:
-```
+```javascript
 .angular-cli.json
 
     "scripts": [
@@ -20,28 +20,28 @@ DON'T forget to import to angular-cli:
 2. Copy slider component to your 
 
 3. Import slider to app module
-```
+```javascript
 app.module.ts
 
 import { SliderComponent } from './slider/slider.component';
 ```
 
 4. Import Hammer.js for touch actions
-```
+```javascript
 app.module.ts
 
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 ```
 
 5. Import Angular animations
-```
+```javascript
 app.module.ts
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 ```
 
 6. Add declaration to handle HammerJs scroll event
-```
+```javascript
 app.module.ts
 
 declare var Hammer: any;
@@ -57,7 +57,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
 ```
 
 7. Add HammerJS to providers
-```
+```javascript
 app.module.ts
 
   {
@@ -67,7 +67,7 @@ app.module.ts
 ```
 
 ## In the end your app.module file should look something like this
-```
+```javascript
 app.module.ts
 
 // slider - BEGIN
@@ -109,13 +109,13 @@ export class AppModule { }
 ```
 
 8. Add slider component
-```
+```javascript
 <mk-slider [config]="slideConfig" [slides]="slides"></mk-slider>
 ```
 
 9. Format data before passing to slider component. Example of expected data format:
-```
-...
+```javascript
+
   {
     "id": 1,
     "image": "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?h=350&auto=compress&cs=tinysrgb",
@@ -130,7 +130,7 @@ export class AppModule { }
     "title": "Slider 4",
     "description": "Short text 4"
   }
-...
+
 ```
 
 # MkComponents - standard angular CLI setup below
