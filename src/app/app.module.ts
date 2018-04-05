@@ -2,42 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import {LocalDataService} from './services/local-data.service';
-
 
 // slider - BEGIN
-import { SliderComponent } from './slider/slider.component';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SliderModule} from './slider/slider.module';
 // slider - END
 
-declare var Hammer: any;
 
-export class MyHammerConfig extends HammerGestureConfig  {
-  buildHammer(element: HTMLElement) {
-    const mc = new Hammer(element, {
-      touchAction: 'pan-y'
-    });
-    return mc;
-  }
-}
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SliderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    SliderModule
   ],
-  providers: [
-    LocalDataService,
-    {
-    provide: HAMMER_GESTURE_CONFIG,
-    useClass: MyHammerConfig
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

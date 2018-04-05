@@ -2,7 +2,33 @@
 1. Slider
 
 
-## How to use - Slider:
+## Slider quick setup
+### Install dependencies
+```javascript
+npm install hammerjs --save
+```
+
+### Import to angular-cli:
+```javascript
+//.angular-cli.json
+
+    "scripts": [
+      "../node_modules/hammerjs/hammer.min.js"
+    ]
+```
+### Import slider module to your project
+```
+//app.module.ts
+  import {SliderModule} from './slider/slider.module';
+  ...
+  imports: [
+    ...,
+    SliderModule
+  ],
+
+```
+
+## Slider - tutorial - how it works:
 
 1. Install dependencies
 ```javascript
